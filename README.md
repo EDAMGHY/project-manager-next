@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ProjectManager App
 
-## Getting Started
+This is the frontend repository for the ProjectManager App
+The ProjectManager is an app for managing your projects and their tasks with roles and permissions checks on the app level.
 
-First, run the development server:
+## Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### All The Add, Update Will be done through Modals No Page Needed...
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [ ] Landing Page +1
+  - [ ] Hero Section
+  - [ ] About the ProjectManager
+- [ ] Login Page +2
+- [ ] Register Page +3
+- [ ] Dashboard Page (User, Owner, Other Roles) with Sidebar?
+  - _OVERVIEW_ +4
+    - OWNER
+      - [ ] Latest Users
+      - [ ] Latest Roles
+      - [ ] Latest Permissions
+      - [ ] Latest Projects and Tasks
+    - USER
+      - [ ] Latest Projects and Tasks
+    - OTHER ROLES
+      - [ ] Latest Projects and Tasks
+      - [ ] (Users, Permissions, Roles) Management Depending on the permissions the ROLE has
+  - **FOR THE OWNER**
+    - _USERS_ +5
+      - [ ] CRUD (Read, Update, Delete) Users
+      - [ ] Edit Users Roles
+    - _ROLES_ +6
+      - [ ] CRUD (Create, Read, Update, Delete) Roles
+    - _PERMISSIONS_ +7
+      - [ ] CRUD (Read, Update) Permissions
+    - _OTHER ROLES_
+      - [ ] (Users, Permissions, Roles) Management Depending on the permissions the ROLE has
+  - _SETTINGS_ +8
+    - [ ] Delete Account
+    - [ ] Color Scheme?
+    - [ ] Dark Mode?
+  - _PROFILE_ +9
+    - [ ] Show Info and Edit Profile Page
+- [ ] Projects List Page +10
+  - [ ] Projects With Its Filters and Sorting
+- [ ] Detailed Project Page +11
+  - [ ] Project Info
+  - [ ] The Project Tasks
+- [ ] Tasks List Page +12
+  - [ ] Tasks With Its Filters and Sorting
+- [ ] Detailed Task Page +13
+  - [ ] Task Info
+  - [ ] The Task Tasks
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Dashboard Designs
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Dashboard Design](/assets/image.png)
