@@ -1,4 +1,4 @@
-import { FaUser } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
 import { config } from "../../../lib/project.config";
 
 export const FooterDashboard = () => {
