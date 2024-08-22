@@ -17,15 +17,16 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@/ui": ["./components/ui/index.ts"],
-      "@/theme": ["./components/theme/index.ts"],
-      "@/layout": ["./components/layout/index.ts"],
-      "@/widgets": ["./components/widgets/index.ts"],
-      "@/modules": ["./components/modules/index.ts"],
-      "@/types": ["./types/index.ts"],
-      "@/lib": ["./lib/*"]
+      "@/*": ["./src/*"],
+      "@/ui": ["./src/components/ui/index.ts"],
+      "@/theme": ["./src/components/theme/index.ts"],
+      "@/layout": ["./src/components/layout/index.ts"],
+      "@/widgets": ["./src/components/widgets/index.ts"],
+      "@/modules": ["./src/components/modules/index.ts"],
+      "@/types": ["./src/types/index.ts"],
+      "@/lib": ["./src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
