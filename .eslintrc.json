@@ -13,6 +13,7 @@
     "tailwindcss/no-custom-classname": "warn",
     "tailwindcss/no-arbitrary-value": "warn",
     "tailwindcss/classnames-order": "off",
+    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/no-unescaped-entities": "off",
