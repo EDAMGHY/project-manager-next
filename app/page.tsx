@@ -1,14 +1,10 @@
-import { Footer, Navbar } from "@/layout";
-import { ModeToggle } from "@/theme";
+import { Footer, Navbar } from "../components/layout";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="">
-        App
-        <ModeToggle />
-      </main>
+      <main>App</main>
       <Footer />
     </>
   );

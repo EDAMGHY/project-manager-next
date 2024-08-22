@@ -1,3 +1,11 @@
+"use client";
+import { redirect } from "next/navigation";
+import { useEffect } from "react";
+
 export default function Dashboard() {
-  return <div>Dashboard</div>;
+  useEffect(() => {
+    redirect("/dashboard/overview");
+  }, []);
+
+  return <div>Redirecting to Dashboard/Overview...</div>;
 }

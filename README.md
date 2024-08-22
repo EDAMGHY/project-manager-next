@@ -7,12 +7,12 @@ The ProjectManager is an app for managing your projects and their tasks with rol
 
 ### All The Add, Update Will be done through Modals No Page Needed...
 
-- [ ] Landing Page +1
+- [x] Landing Page +1
   - [ ] Hero Section
   - [ ] About the ProjectManager
-- [ ] Login Page +2
-- [ ] Register Page +3
-- [ ] Dashboard Page (User, Owner, Other Roles) with Sidebar?
+- [x] Login Page +2
+- [x] Register Page +3
+- [x] Dashboard Page (User, Owner, Other Roles) with Sidebar?
   - _OVERVIEW_ +4
     - OWNER
       - [ ] Latest Users
@@ -40,7 +40,7 @@ The ProjectManager is an app for managing your projects and their tasks with rol
     - [ ] Dark Mode?
   - _PROFILE_ +9
     - [ ] Show Info and Edit Profile Page
-- [ ] Projects List Page +10
+- [x] Projects List Page +10
   - [ ] Projects With Its Filters and Sorting
 - [ ] Detailed Project Page +11
   - [ ] Project Info

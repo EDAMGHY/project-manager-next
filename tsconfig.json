@@ -21,7 +21,11 @@
       "@/*": ["./*"],
       "@/ui": ["./components/ui/index.ts"],
       "@/theme": ["./components/theme/index.ts"],
-      "@/layout": ["./components/layout/index.ts"]
+      "@/layout": ["./components/layout/index.ts"],
+      "@/widgets": ["./components/widgets/index.ts"],
+      "@/modules": ["./components/modules/index.ts"],
+      "@/types": ["./types/index.ts"],
+      "@/lib": ["./lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
