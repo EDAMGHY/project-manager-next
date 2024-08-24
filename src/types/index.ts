@@ -22,7 +22,7 @@ export interface ISharedFilters {
   setSort: (sort: ISortState) => void;
   sort: ISortState;
 }
-type IITColumn = {
+export type IITColumn = {
   label: string;
   field: string;
   className?: string;
@@ -34,6 +34,7 @@ export interface IInternalTable<T = any> {
   data: T[];
   renderDataItem: (item: T, index: number, columns: IITColumn[]) => ReactNode;
   className?: string;
+  isCards?: boolean;
 }
 
 type GenericRolePermission = {
@@ -62,8 +63,50 @@ export interface IProject {
   budget: number;
   progress: number;
 }
+export interface ILog {
+  action: string;
+  description: string;
+  role: string;
+  ipAddress: string;
+  method: string;
+  endpoint: string;
+  statusCode: number;
+  responseTime: string;
+  stack: string;
+  userAgent: string;
+  user: string;
+}
 
 export interface ISidebar {
   minimizeSidebar: boolean;
   setMinimizeSidebar: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface ITableCellActions {
+  editURL?: string;
+  deleteURL?: string;
+  editOnClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  deleteOnClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+type IRenderItem<T> = {
+  item: T;
+  index: number;
+  columns?: IITColumn[];
+  className?: string;
+  noActions?: boolean;
+};
+
+export type IUserRenderItem = IRenderItem<IUser>;
+export type IProjectRenderItem = IRenderItem<IProject>;
+export type IPermissionRenderItem = IRenderItem<IPermission>;
+export type IRoleRenderItem = IRenderItem<IRole>;
+export type ILogRenderItem = IRenderItem<ILog>;
+
+export interface IOverviewDataCard<T = any> {
+  title: string;
+  className?: string;
+  columns: IITColumn[];
+  data: T[];
+  renderDataItem: (props: IRenderItem<T>) => ReactNode;
 }

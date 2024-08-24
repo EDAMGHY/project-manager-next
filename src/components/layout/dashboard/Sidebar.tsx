@@ -1,38 +1,53 @@
 "use client";
 
 import Link from "next/link";
-import { sidebarMenus } from "../../../lib/mock-data";
-import { config } from "../../../lib/project.config";
+import { sidebarMenus } from "@/lib/mock-data";
+import { config } from "@/lib/project.config";
 import { usePathname } from "next/navigation";
-import { cn } from "../../../lib/utils";
+import { cn } from "@/lib/utils";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
-import { Heading } from "../../ui";
-import { ISidebar } from "../../../types";
+import { Heading } from "@/ui";
+import { ISidebar } from "@/types";
+import { useMediaQuery } from "@uidotdev/usehooks";
+
+import { useEffect } from "react";
 
 export const SidebarDashboard = ({
   minimizeSidebar,
   setMinimizeSidebar,
 }: ISidebar) => {
   const pathname = usePathname();
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 
   const isActive = (url: string) => url === pathname;
+
+  const closeSidebar = () => {
+    if (isSmallDevice) {
+      return;
+    }
+    setMinimizeSidebar((prev: boolean) => !prev);
+  };
+
+  useEffect(() => {
+    if (isSmallDevice) {
+      setMinimizeSidebar(true);
+    }
+  }, [isSmallDevice, setMinimizeSidebar]);
+
   return (
     <div
       className={cn(
         minimizeSidebar ? "w-[50px]" : "w-[220px]",
-        "h-screen fixed  border-r border-input overflow-hidden",
+        "h-screen fixed  border-r border-input overflow-hidden transition-all ease-in"
       )}
     >
       <div
         className={cn(
           "flex gap-4 items-center border-b border-input",
-          minimizeSidebar ? "p-[18px] justify-center" : "px-4 py-[17px]",
+          minimizeSidebar ? "p-[18px] justify-center" : "px-4 py-[17px]"
         )}
       >
-        <button
-          className="hover:text-zinc-500"
-          onClick={() => setMinimizeSidebar((prev: boolean) => !prev)}
-        >
+        <button className="hover:text-zinc-500" onClick={closeSidebar}>
           {minimizeSidebar ? (
             <GoSidebarCollapse size={20} />
           ) : (
@@ -55,7 +70,7 @@ export const SidebarDashboard = ({
               className={cn(
                 "flex items-center gap-2 px-4 py-4 hover:bg-zinc-800",
                 minimizeSidebar && "justify-center py-[18px]",
-                isActive(menu.link) && "bg-zinc-800 text-white",
+                isActive(menu.link) && "bg-zinc-800 text-white"
               )}
               href={menu.link}
             >

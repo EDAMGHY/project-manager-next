@@ -22,7 +22,7 @@ export default function DashboardLayout({
         className={cn("w-full", minimizeSidebar ? "ml-[50px]" : "ml-[220px]")}
       >
         <NavbarDashboard />
-        <main className="p-4 min-h-[calc(100vh-56px-54px)]">{children}</main>
+        <main className="p-4 min-h-[calc(100vh-56px-50px)]">{children}</main>
         <FooterDashboard />
       </div>
     </div>

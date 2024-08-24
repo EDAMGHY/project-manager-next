@@ -15,6 +15,7 @@ export const InternalTable = <T,>({
   data = [],
   renderDataItem,
   className,
+  isCards = false,
 }: IInternalTable<T>) => {
   return (
     <Table className={cn("my-10", className)}>
@@ -22,7 +23,7 @@ export const InternalTable = <T,>({
       <TableHeader>
         <TableRow>
           {columns.map((column, index) => (
-            <TableHead data-field={column.field} key={index}>
+            <TableHead isCards={isCards} data-field={column.field} key={index}>
               {column.label}
             </TableHead>
           ))}

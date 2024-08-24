@@ -15,12 +15,13 @@ The ProjectManager is an app for managing your projects and their tasks with rol
 - [x] Dashboard Page (User, Owner, Other Roles) with Sidebar?
   - _OVERVIEW_ +4
     - OWNER
-      - [ ] Latest Users
-      - [ ] Latest Roles
-      - [ ] Latest Permissions
-      - [ ] Latest Projects and Tasks
+      - [ ] Latest Logs
+      - [x] Latest Users
+      - [x] Latest Roles
+      - [x] Latest Permissions
+      - [x] Latest Projects and Tasks
     - USER
-      - [ ] Latest Projects and Tasks
+      - [x] Latest Projects and Tasks
     - OTHER ROLES
       - [ ] Latest Projects and Tasks
       - [ ] (Users, Permissions, Roles) Management Depending on the permissions the ROLE has

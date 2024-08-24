@@ -1,16 +1,11 @@
-import {
-  FaFolderPlus,
-  FaUsers,
-  FaTasks,
-  FaCog,
-  FaUniversalAccess,
-  FaRegUserCircle,
-} from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import { RiFoldersLine, RiSettings2Line } from "react-icons/ri";
 import { FaUsersRays } from "react-icons/fa6";
 import { BsShieldLock } from "react-icons/bs";
 import { PiUsersFour } from "react-icons/pi";
+import { GoTasklist } from "react-icons/go";
+import { TbLogs } from "react-icons/tb";
 
 export const authenticatedUser = {
   name: "John Doe",
@@ -21,27 +16,32 @@ export const overviewData = [
   {
     title: "Users",
     value: 100,
-    icon: <FaUsers className="shrink-0" size={48} />,
+    icon: <PiUsersFour className="shrink-0" size={28} />,
   },
   {
     title: "Projects",
     value: 12,
-    icon: <FaFolderPlus className="shrink-0" size={48} />,
+    icon: <RiFoldersLine className="shrink-0" size={28} />,
   },
   {
     title: "Tasks",
     value: 45,
-    icon: <FaTasks className="shrink-0" size={48} />,
+    icon: <GoTasklist className="shrink-0" size={28} />,
   },
   {
     title: "Roles",
     value: 5,
-    icon: <FaCog className="shrink-0" size={48} />,
+    icon: <FaUsersRays className="shrink-0" size={28} />,
   },
   {
     title: "Permissions",
     value: 30,
-    icon: <FaUniversalAccess className="shrink-0" size={48} />,
+    icon: <BsShieldLock className="shrink-0" size={28} />,
+  },
+  {
+    title: "Logs",
+    value: 88,
+    icon: <TbLogs className="shrink-0" size={28} />,
   },
 ];
 
@@ -225,6 +225,103 @@ export const rolesData = {
     },
   ],
 };
+export const logsData = {
+  columns: [
+    { label: "Action", field: "action" },
+    { label: "Description", field: "description" },
+    { label: "Role Name", field: "role" },
+    { label: "IP Address", field: "ipAddress" },
+    { label: "Method", field: "method" },
+    { label: "Endpoint", field: "endpoint" },
+    { label: "Status Code", field: "statusCode" },
+    { label: "Response Time", field: "responseTime" },
+    { label: "User Agent", field: "userAgent" },
+    {
+      label: "Actions",
+      field: "actions",
+    },
+  ],
+
+  data: [
+    {
+      action: "Login",
+      description: "User login attempt",
+      role: "Admin",
+      ipAddress: "192.168.1.1",
+      method: "POST",
+      endpoint: "/api/v1/auth/login",
+      statusCode: 200,
+      responseTime: "150ms",
+      userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    },
+    {
+      action: "Create User",
+      description: "Admin created a new user",
+      role: "Admin",
+      ipAddress: "192.168.1.2",
+      method: "POST",
+      endpoint: "/api/v1/users/create",
+      statusCode: 201,
+      responseTime: "230ms",
+      userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    },
+    {
+      action: "Fetch Users",
+      description: "User requested list of all users",
+      role: "Manager",
+      ipAddress: "192.168.1.3",
+      method: "GET",
+      endpoint: "/api/v1/users",
+      statusCode: 200,
+      responseTime: "120ms",
+      userAgent: "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)",
+    },
+    {
+      action: "Update User",
+      description: "Admin updated user details",
+      role: "Admin",
+      ipAddress: "192.168.1.4",
+      method: "PUT",
+      endpoint: "/api/v1/users/123",
+      statusCode: 204,
+      responseTime: "180ms",
+      userAgent: "Mozilla/5.0 (Linux; Android 10)",
+    },
+    {
+      action: "Delete User",
+      description: "Admin deleted a user",
+      role: "Admin",
+      ipAddress: "192.168.1.5",
+      method: "DELETE",
+      endpoint: "/api/v1/users/123",
+      statusCode: 200,
+      responseTime: "210ms",
+      userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    },
+    {
+      action: "View Dashboard",
+      description: "User accessed the dashboard",
+      role: "User",
+      ipAddress: "192.168.1.6",
+      method: "GET",
+      endpoint: "/api/v1/dashboard",
+      statusCode: 200,
+      responseTime: "95ms",
+      userAgent: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64)",
+    },
+    {
+      action: "Logout",
+      description: "User logged out",
+      role: "User",
+      ipAddress: "192.168.1.7",
+      method: "POST",
+      endpoint: "/api/v1/auth/logout",
+      statusCode: 204,
+      responseTime: "130ms",
+      userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)",
+    },
+  ],
+};
 
 export const permissionsData = {
   columns: [
@@ -301,6 +398,11 @@ export const sidebarMenus = [
     title: "Permissions",
     icon: BsShieldLock,
     link: "/dashboard/permissions",
+  },
+  {
+    title: "Logs",
+    icon: TbLogs,
+    link: "/dashboard/logs",
   },
   {
     title: "Profile",
